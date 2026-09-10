@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Livestream | Decibel Sound & Light Equipment</title>
+  <meta name="description" content="Besloten livestream verzorgd door Decibel Sound & Light Equipment.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="stream-page">
+  <main class="stream-shell">
+    <section class="stream-card" aria-labelledby="stream-title">
+      <div class="stream-brand">
+        <a href="index.html" aria-label="Decibel Sound & Light Equipment">
+          <img src="assets/decibel-logo.png" alt="Decibel Sound & Light Equipment">
+        </a>
+      </div>
+
+      <div id="stream-lock" class="stream-lock">
+        <p class="stream-kicker">Besloten livestream</p>
+        <h1 id="stream-title">Welkom bij de livestream</h1>
+        <p class="stream-intro">Deze uitzending is alleen bedoeld voor genodigden. Vul de ontvangen toegangscode in om de livestream te openen.</p>
+
+        <form id="stream-password-form" class="stream-password-form" autocomplete="off">
+          <label for="stream-password">Toegangscode</label>
+          <div class="stream-password-row">
+            <input id="stream-password" name="password" type="password" inputmode="text" autocomplete="current-password" required autofocus>
+            <button class="btn stream-open-btn" type="submit">Open livestream</button>
+          </div>
+          <p id="stream-password-error" class="stream-password-error" role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div id="stream-content" class="stream-content" hidden>
+        <div class="stream-heading">
+          <div>
+            <p class="stream-kicker">Live · Decibel Sound & Light Equipment</p>
+            <h1>Livestream</h1>
+          </div>
+          <span class="stream-live-badge"><span></span> LIVE</span>
+        </div>
+
+        <div class="stream-player-wrap">
+          <div id="stream-player-placeholder" class="stream-player-placeholder" aria-live="polite">
+            <p>Livestream wordt geladen…</p>
+          </div>
+        </div>
+
+        <div class="stream-help">
+          <p>Geen beeld? De uitzending is mogelijk nog niet gestart. Zodra Decibel live gaat verschijnt de stream automatisch in de speler.</p>
+        </div>
+      </div>
+
+      <footer class="stream-footer">
+        <span>Livestream verzorgd door</span>
+        <strong>Decibel Sound &amp; Light Equipment</strong>
+        <a href="https://decibelsound.nl/">decibelsound.nl</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="stream.js"></script>
+</body>
+</html>
