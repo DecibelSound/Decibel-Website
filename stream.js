@@ -11,8 +11,10 @@
 
   const loadPlayer = () => {
     if (placeholder.querySelector('iframe')) return;
+
+    const parent = window.location.hostname;
     const iframe = document.createElement('iframe');
-    iframe.src = 'https://player.twitch.tv/?channel=decibelsound&parent=decibelsound.nl&parent=www.decibelsound.nl&autoplay=false&muted=false';
+    iframe.src = `https://player.twitch.tv/?channel=decibelsound&parent=${encodeURIComponent(parent)}&autoplay=false&muted=false`;
     iframe.title = 'Decibel livestream via Twitch';
     iframe.allowFullscreen = true;
     iframe.setAttribute('allow', 'autoplay; fullscreen');
@@ -28,9 +30,7 @@
     loadPlayer();
   };
 
-  if (sessionStorage.getItem(SESSION_KEY) === '1') {
-    unlock();
-  }
+  if (sessionStorage.getItem(SESSION_KEY) === '1') unlock();
 
   form.addEventListener('submit', event => {
     event.preventDefault();
