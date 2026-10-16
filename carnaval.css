@@ -362,3 +362,6 @@
   .how-grid article>span,.how-grid article>svg{margin-bottom:0}
   .service-heading{margin-top:43px}
 }
+
+/* Explicit color prevents iOS/WebKit from rendering this button as a blue link. */
+.btn-detail{color:#171717;-webkit-text-fill-color:#171717}

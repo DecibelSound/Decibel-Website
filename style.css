@@ -822,3 +822,7 @@ body.carnaval-promo-open{overflow:hidden}
 @keyframes carnavalSpark{0%,100%{transform:scale(.72);opacity:.52}50%{transform:scale(1.12);opacity:1}}
 @media(max-width:760px){.carnaval-promo{padding:15px}.carnaval-promo__card{grid-template-columns:1fr;width:100%;max-width:100%;border-radius:24px}.carnaval-promo__visual{min-height:155px}.carnaval-promo__visual strong{left:22px;bottom:18px;font-size:2.75rem}.carnaval-promo__content{min-width:0;padding:34px 24px 30px}.carnaval-promo__content h2{font-size:clamp(2rem,10vw,3rem);overflow-wrap:anywhere}.carnaval-promo__content>p:not(.carnaval-promo__eyebrow){font-size:.94rem}.carnaval-promo__actions{align-items:stretch;flex-direction:column;gap:14px;width:100%}.carnaval-promo__actions .btn{width:100%;padding-inline:14px;white-space:normal;text-align:center}.carnaval-promo__actions>button{padding:8px}.carnaval-promo__close{right:12px;top:12px}}
 @media(prefers-reduced-motion:reduce){.carnaval-promo,.carnaval-promo__card{transition:none}.carnaval-promo__visual span{animation:none}}
+
+/* Keep iOS/WebKit from applying its default blue text color to buttons. */
+button{color:inherit;-webkit-text-fill-color:currentColor}
+.mobile-toggle{color:#111;-webkit-text-fill-color:#111}
