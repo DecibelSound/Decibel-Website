@@ -1,7 +1,12 @@
 
 const toggle=document.querySelector('.mobile-toggle');
 const menu=document.querySelector('.menu');
-if(toggle&&menu){toggle.addEventListener('click',()=>menu.classList.toggle('open'))}
+if(toggle&&menu){toggle.addEventListener('click',()=>{const isOpen=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(isOpen))})}
+
+document.querySelectorAll('.catalog-link').forEach(link=>{
+  link.textContent='Carnaval';
+  link.setAttribute('aria-label','Carnavalscatalogus');
+});
 
 const topbar=document.querySelector('.topbar');
 if(topbar){
@@ -71,4 +76,44 @@ if(contactForm){
       formStatus.classList.add('is-error');
     }
   });
+}
+
+const carnavalPromoKey='decibel-carnaval-promo-2027-last-shown';
+const carnavalPromoInterval=12*60*60*1000;
+const isCarnavalCatalog=document.body.classList.contains('carnaval-page');
+const isHomePage=/(^|\/)index\.html$/.test(window.location.pathname)||window.location.pathname==='/'||window.location.pathname.endsWith('/Output/');
+let promoLastShown=0;
+try{promoLastShown=Number(localStorage.getItem(carnavalPromoKey)||0)}catch(error){promoLastShown=0}
+const promoIsDue=!promoLastShown||Date.now()-promoLastShown>=carnavalPromoInterval;
+if(isHomePage&&!isCarnavalCatalog&&promoIsDue){
+  window.setTimeout(()=>{
+    try{localStorage.setItem(carnavalPromoKey,String(Date.now()))}catch(error){/* De popup werkt ook zonder webopslag. */}
+    const promo=document.createElement('div');
+    promo.className='carnaval-promo';
+    promo.innerHTML=`
+      <button class="carnaval-promo__backdrop" type="button" data-promo-close aria-label="Popup sluiten"></button>
+      <section class="carnaval-promo__card" role="dialog" aria-modal="true" aria-labelledby="carnaval-promo-title" tabindex="-1">
+        <button class="carnaval-promo__close" type="button" data-promo-close aria-label="Popup sluiten">×</button>
+        <div class="carnaval-promo__visual" aria-hidden="true"></div>
+        <div class="carnaval-promo__content">
+          <p class="carnaval-promo__eyebrow">Carnavalsverhuur 2027</p>
+          <h2 id="carnaval-promo-title">Geluid en licht nodig voor jullie carnavals<wbr>wagen?</h2>
+          <p>Bekijk de sets en stel jullie pakket samen.</p>
+          <div class="carnaval-promo__actions"><a class="btn" href="carnaval.html">Bekijk carnavalssets</a><button type="button" data-promo-close>Sluiten</button></div>
+        </div>
+      </section>`;
+    const closePromo=()=>{
+      promo.classList.remove('is-visible');
+      document.body.classList.remove('carnaval-promo-open');
+      window.setTimeout(()=>promo.remove(),320);
+    };
+    promo.querySelectorAll('[data-promo-close]').forEach(button=>button.addEventListener('click',closePromo));
+    promo.addEventListener('keydown',event=>{if(event.key==='Escape')closePromo()});
+    document.body.appendChild(promo);
+    document.body.classList.add('carnaval-promo-open');
+    window.requestAnimationFrame(()=>{
+      promo.classList.add('is-visible');
+      promo.querySelector('.carnaval-promo__card').focus({preventScroll:true});
+    });
+  },900);
 }

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gegevens reserveringsaanvraag | Decibel Carnaval</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="carnaval.css">
+  <link rel="stylesheet" href="carnaval-reservering.css">
+</head>
+<body class="reservation-page" data-reservation-page="form">
+  <div class="topbar"><div><a href="tel:+31432340567"><span aria-hidden="true">☎</span><span>+31 43 234 0567</span></a><a href="mailto:carnaval@decibelsound.nl"><span aria-hidden="true">✉</span><span>carnaval@decibelsound.nl</span></a></div></div>
+  <header class="nav"><div class="nav-inner"><a class="brand" href="carnaval.html"><img src="assets/decibel-logo.png" alt="Decibel Sound & Light Equipment"></a><a class="btn" href="reservering-overzicht.html" data-return-overview>Selectie aanpassen</a></div></header>
+  <main class="reservation-main">
+    <div class="reservation-shell">
+      <ol class="reservation-steps" aria-label="Stappen reserveringsaanvraag"><li>1. Selectie controleren</li><li class="is-active">2. Gegevens invullen</li><li>3. Aanvraag versturen</li></ol>
+      <header class="reservation-head"><div><p class="kicker">Reserveringsaanvraag</p><h1>Vul jullie gegevens in</h1></div><p>Na verzending controleren we de samenstelling en beschikbaarheid. De aanvraag is nog geen definitieve reservering.</p></header>
+      <div class="reservation-period"><span class="reservation-period__icon" aria-hidden="true">✓</span><span><strong>Bijna klaar</strong>De gekozen materialen blijven bewaard terwijl jullie dit formulier invullen.</span></div>
+      <div class="reservation-form-layout" data-form-layout>
+        <form class="reservation-form-card request-form" action="https://formspree.io/f/mljgaarv" method="POST" data-reservation-form>
+          <section class="reservation-form-section">
+            <header><span>01</span><div><h2>Contactgegevens</h2><p>Van de huurder en de contactpersoon van de groep.</p></div></header>
+            <div class="form-grid">
+              <label>Volledige naam huurder<input name="volledige_naam_huurder" autocomplete="name" required></label>
+              <label>Naam carnavalsgroep/-vereniging<input name="carnavalsgroep" autocomplete="organization" required></label>
+              <label>E-mailadres huurder<input name="email" type="email" autocomplete="email" required></label>
+              <label>Telefoonnummer contactpersoon groep<input name="telefoon_contactpersoon" type="tel" autocomplete="tel" required></label>
+            </div>
+          </section>
+            <fieldset class="address-fields form-span" data-address-block data-address-prefix="afleveradres" data-delivery-address>
+              <legend><span>02</span> Afleveradres waar de wagen staat</legend>
+              <label class="address-unknown"><input type="checkbox" name="afleveradres_nog_onbekend" value="Ja" data-delivery-unknown><span>Afleveradres nog onbekend</span></label>
+              <div class="address-grid">
+                <label class="address-street">Straat<input name="afleveradres_straat" autocomplete="shipping address-line1" data-delivery-required required></label>
+                <label>Huisnummer<input name="afleveradres_huisnummer" inputmode="numeric" data-delivery-required required></label>
+                <label>Toevoeging<input name="afleveradres_toevoeging" autocomplete="shipping address-line2" placeholder="- indien n.v.t." data-delivery-required required></label>
+                <label>Postcode<input name="afleveradres_postcode" autocomplete="shipping postal-code" inputmode="text" placeholder="1234 AB" data-delivery-required required></label>
+                <label class="address-city">Plaats<input name="afleveradres_plaats" autocomplete="shipping address-level2" data-delivery-required required></label>
+                <label>Land<input name="afleveradres_land" autocomplete="shipping country-name" value="Nederland" data-delivery-required required></label>
+              </div>
+              <p class="address-help" data-delivery-help>Vul het adres in waar de carnavalswagen tijdens levering staat.</p>
+              <p class="address-lookup" data-address-lookup role="status" aria-live="polite">Gratis adresaanvulling via PDOK: vul postcode en huisnummer in.</p>
+            </fieldset>
+            <fieldset class="address-fields form-span" data-address-block data-address-prefix="huurder">
+              <legend><span>03</span> Adres huurder</legend>
+              <div class="address-grid">
+                <label class="address-street">Straat<input name="huurder_straat" autocomplete="billing address-line1" required></label>
+                <label>Huisnummer<input name="huurder_huisnummer" inputmode="numeric" required></label>
+                <label>Toevoeging<input name="huurder_toevoeging" autocomplete="billing address-line2" placeholder="- indien n.v.t." required></label>
+                <label>Postcode<input name="huurder_postcode" autocomplete="billing postal-code" inputmode="text" placeholder="1234 AB" required></label>
+                <label class="address-city">Plaats<input name="huurder_plaats" autocomplete="billing address-level2" required></label>
+                <label>Land<input name="huurder_land" autocomplete="billing country-name" value="Nederland" required></label>
+              </div>
+              <p class="address-lookup" data-address-lookup role="status" aria-live="polite">Gratis adresaanvulling via PDOK: vul postcode en huisnummer in.</p>
+            </fieldset>
+          <section class="reservation-form-section reservation-form-section--final">
+            <header><span>04</span><div><h2>Opmerkingen en bevestiging</h2><p>Geef hier eventueel extra informatie over de wagen of jullie wensen door.</p></div></header>
+            <label class="form-span">Opmerkingen of vragen<textarea name="opmerkingen" rows="5" placeholder="Bijvoorbeeld de afmetingen van de wagen of een gewenste leverdag"></textarea></label>
+            <label class="request-confirm"><input type="checkbox" name="akkoord_aanvraag" value="Ja" required><span>Ik begrijp dat dit een aanvraag is en dat de reservering pas definitief is na controle, ondertekening en aanbetaling.</span></label>
+            <p class="request-transport">Transport wordt na de aanvraag berekend. Binnen 35 km van Meerssen is transport gratis.</p>
+          </section>
+          <input class="request-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="reservation-feedback" data-reservation-feedback role="alert" hidden></p>
+          <button class="btn" type="submit" data-reservation-submit>Aanvraag versturen</button>
+          <p class="form-help">Lukt versturen niet? Mail dan naar <a href="mailto:carnaval@decibelsound.nl">carnaval@decibelsound.nl</a>.</p>
+        </form>
+        <aside class="reservation-form-summary" data-form-summary></aside>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script><script src="carnaval-data.js"></script><script src="carnaval-reservering.js"></script>
+</body>
+</html>

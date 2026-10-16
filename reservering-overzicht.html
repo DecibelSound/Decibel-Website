@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Controleer je reserveringsaanvraag | Decibel Carnaval</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="carnaval.css">
+  <link rel="stylesheet" href="carnaval-reservering.css">
+</head>
+<body class="reservation-page" data-reservation-page="overview">
+  <div class="topbar"><div><a href="tel:+31432340567"><span aria-hidden="true">☎</span><span>+31 43 234 0567</span></a><a href="mailto:carnaval@decibelsound.nl"><span aria-hidden="true">✉</span><span>carnaval@decibelsound.nl</span></a></div></div>
+  <header class="nav"><div class="nav-inner"><a class="brand" href="carnaval.html"><img src="assets/decibel-logo.png" alt="Decibel Sound & Light Equipment"></a><a class="btn" href="carnaval.html#catalogus" data-return-catalog>Verder winkelen</a></div></header>
+  <main class="reservation-main">
+    <div class="reservation-shell">
+      <ol class="reservation-steps" aria-label="Stappen reserveringsaanvraag"><li class="is-active">1. Selectie controleren</li><li>2. Gegevens invullen</li><li>3. Aanvraag versturen</li></ol>
+      <header class="reservation-head"><div><p class="kicker">Jullie reservering</p><h1>Controleer de winkelwagen</h1></div></header>
+      <div class="reservation-period"><span class="reservation-period__icon" aria-hidden="true">✓</span><span><strong>Één prijs voor de volledige carnavalsperiode</strong>Zaterdag 6 t/m dinsdag 9 februari 2027. Afwijkende data alleen op aanvraag.</span></div>
+      <div class="reservation-layout">
+        <section class="reservation-panel" aria-label="Geselecteerde producten" data-reservation-items></section>
+        <aside class="reservation-total" aria-label="Totaal reserveringsaanvraag">
+          <p class="reservation-total__eyebrow">Reserveringsoverzicht</p>
+          <h2>Jullie selectie</h2>
+          <div class="reservation-category-summary" data-reservation-category-summary aria-label="Aantallen per categorie"></div>
+          <div class="reservation-total__line reservation-total__main"><span>Totaal incl. btw</span><strong data-reservation-total>€ 0,00</strong></div>
+          <div class="reservation-total__line"><span>Excl. btw</span><span data-reservation-total-ex>€ 0,00</span></div>
+          <button class="btn" type="button" data-continue-reservation>Verder naar gegevens</button>
+          <a class="reservation-back" href="carnaval.html#catalogus" data-return-catalog>Terug naar de catalogus</a>
+          <div class="reservation-assurances"><p><span aria-hidden="true">✓</span> Transport binnen 35 km gratis</p><p><span aria-hidden="true">✓</span> Eerst controle op beschikbaarheid</p><p><span aria-hidden="true">✓</span> Nog geen definitieve reservering</p></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <dialog class="catalog-dialog product-dialog reservation-product-dialog" data-reservation-product-dialog aria-labelledby="reservation-product-dialog-title"><button class="dialog-close" type="button" data-reservation-product-close aria-label="Sluiten">×</button><div data-reservation-product-content data-product-dialog-content></div></dialog>
+  <script src="script.js"></script><script src="carnaval-data.js"></script><script src="carnaval-reservering.js"></script>
+</body>
+</html>

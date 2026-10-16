@@ -1,0 +1,225 @@
+.reservation-page{min-height:100vh;background:linear-gradient(180deg,#111318 0,#1a1b20 340px,#f2eee6 341px);color:#191919}
+.reservation-main{padding:64px 24px 90px}
+.reservation-shell{width:min(1160px,100%);margin:auto}
+.reservation-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px;color:#fff}
+.reservation-head h1{max-width:800px;margin:0;font-size:clamp(2.4rem,6vw,5.3rem);line-height:.92;letter-spacing:-.055em;text-transform:uppercase}
+.reservation-head p:not(.kicker){max-width:430px;margin:0;color:#d1cac0}
+.reservation-steps{display:flex;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.reservation-steps li{padding:8px 12px;border:1px solid rgba(255,255,255,.2);border-radius:999px;color:#aaa49a;font-size:.67rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.reservation-steps li.is-active{border-color:#ffa012;background:#ffa012;color:#17120b}
+.reservation-period{display:flex;align-items:center;gap:12px;margin-bottom:25px;padding:13px 16px;border-radius:14px;background:#ffa012;color:#17120b;font-size:.78rem;font-weight:800}
+.reservation-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}
+.reservation-panel,.reservation-total,.reservation-form-card{border:1px solid rgba(0,0,0,.09);border-radius:22px;background:#fff;box-shadow:0 16px 45px rgba(33,27,21,.08)}
+.reservation-panel{overflow:hidden}
+.reservation-item{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:18px;align-items:center;padding:18px;border-bottom:1px solid rgba(0,0,0,.08)}
+.reservation-item:last-child{border-bottom:0}
+.reservation-item__image{width:150px;height:120px;padding:9px;border-radius:14px;background:linear-gradient(145deg,#faf8f4,#e8e1d8);object-fit:contain}
+.reservation-item__body{min-width:0}.reservation-item__meta{color:#9a5b00;font-size:.63rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.reservation-item h2{margin:3px 0 7px;font-size:1.2rem;letter-spacing:-.025em;text-transform:uppercase}.reservation-item__components{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0;padding:0;list-style:none;color:#6a635a;font-size:.7rem}.reservation-item__components li:before{content:"•";margin-right:5px;color:#ffa012}.reservation-item__note{margin:7px 0 0;color:#8b3e23;font-size:.67rem}.reservation-item__side{display:grid;justify-items:end;gap:11px;min-width:128px}.reservation-item__price{font-weight:950}.reservation-item__price small{display:block;color:#7d746a;font-size:.61rem;font-weight:700;text-align:right}.reservation-quantity{display:flex;align-items:center;gap:8px}.reservation-quantity button{display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(0,0,0,.12);border-radius:50%;background:#f3eee7;font-size:1.1rem;cursor:pointer}.reservation-quantity button:last-child{border-color:#ffa012;background:#ffa012}.reservation-quantity strong{min-width:22px;text-align:center}.reservation-total{position:sticky;top:90px;padding:22px;background:#17191f;color:#fff}.reservation-total h2{margin:0 0 18px;font-size:1.25rem}.reservation-total__line{display:flex;justify-content:space-between;gap:18px;margin-top:10px;color:#bbb5ac;font-size:.76rem}.reservation-total__main{margin-top:18px;padding-top:17px;border-top:1px solid rgba(255,255,255,.13);color:#ffa012;font-size:1.05rem;font-weight:950}.reservation-total .btn{width:100%;margin-top:20px;border:0;cursor:pointer}.reservation-total .btn:disabled{opacity:.35;cursor:not-allowed}.reservation-back{display:block;margin-top:13px;color:#cbc4ba;font-size:.72rem;text-align:center;text-decoration:underline}.reservation-empty{padding:55px 25px;text-align:center}.reservation-empty h2{margin:0 0 8px}.reservation-empty p{color:#6b645b}.reservation-empty .btn{margin-top:12px}
+.reservation-form-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:22px;align-items:start}.reservation-form-card{padding:28px}.reservation-form-card .form-grid{margin-top:0}.reservation-form-card .request-confirm{margin-bottom:18px}.reservation-form-card>.btn{width:100%;border:0;cursor:pointer}.reservation-form-card>.btn:disabled{opacity:.55;cursor:wait}.reservation-form-summary{position:sticky;top:90px}.reservation-form-summary .reservation-total{position:static}.form-selection-list{display:grid;gap:9px;margin:0;padding:0;list-style:none}.form-selection-list li{display:flex;justify-content:space-between;gap:15px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.09);color:#c9c2b8;font-size:.72rem}.form-selection-list span:last-child{color:#fff;font-weight:800;text-align:right}.reservation-feedback{margin:0 0 15px;padding:12px 14px;border-radius:10px;background:#ffe4df;color:#8c271e;font-size:.78rem;font-weight:750}
+@media(max-width:900px){.reservation-head{display:block}.reservation-head p:not(.kicker){margin-top:16px}.reservation-layout,.reservation-form-layout{grid-template-columns:1fr}.reservation-total,.reservation-form-summary{position:static}.reservation-item{grid-template-columns:112px minmax(0,1fr)}.reservation-item__image{width:112px;height:100px}.reservation-item__side{grid-column:1/-1;display:flex;justify-content:space-between;justify-items:stretch;width:100%}}
+@media(max-width:560px){.reservation-main{padding:40px 12px 64px}.reservation-head h1{font-size:2.45rem}.reservation-steps{overflow-x:auto}.reservation-item{grid-template-columns:82px minmax(0,1fr);gap:12px;padding:13px}.reservation-item__image{width:82px;height:78px}.reservation-item__components{display:none}.reservation-form-card{padding:20px 14px}.reservation-period{align-items:flex-start}.reservation-form-card .form-grid{grid-template-columns:1fr}.reservation-form-card .form-span{grid-column:auto}}
+
+/* Losse winkelwagenpagina */
+.reservation-page[data-reservation-page="overview"]{background:#eee8df}
+.reservation-page[data-reservation-page="overview"] .reservation-main{position:relative;isolation:isolate;padding-top:50px;background:linear-gradient(180deg,#101217 0,#181a20 405px,#eee8df 405px)}
+.reservation-page[data-reservation-page="overview"] .reservation-main:before{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:405px;background:radial-gradient(circle at 78% 8%,rgba(255,160,18,.19),transparent 31%);pointer-events:none}
+.reservation-page[data-reservation-page="overview"] .reservation-shell{width:min(1220px,100%)}
+.reservation-page[data-reservation-page="overview"] .reservation-steps{margin-bottom:28px}
+.reservation-page[data-reservation-page="overview"] .reservation-steps li{padding:9px 14px;background:rgba(255,255,255,.035);backdrop-filter:blur(8px)}
+.reservation-page[data-reservation-page="overview"] .reservation-head{align-items:end;margin-bottom:24px}
+.reservation-page[data-reservation-page="overview"] .reservation-head h1{max-width:720px;font-size:clamp(2.7rem,5vw,4.8rem)}
+.reservation-page[data-reservation-page="overview"] .reservation-head>p{padding-bottom:5px;line-height:1.55}
+.reservation-page[data-reservation-page="overview"] .reservation-period{width:max-content;max-width:100%;margin:0 0 34px;padding:12px 15px;border:1px solid rgba(255,160,18,.4);background:rgba(255,160,18,.11);color:#eee8df;font-size:.8rem;line-height:1.35}
+.reservation-period__icon{display:grid;place-items:center;flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:#ffa012;color:#17120b;font-weight:950}
+.reservation-period strong{display:block;color:#ffa012;text-transform:uppercase;letter-spacing:.035em}
+
+.reservation-page[data-reservation-page="overview"] .reservation-layout{grid-template-columns:minmax(0,1fr) 350px;gap:26px}
+.reservation-page[data-reservation-page="overview"] .reservation-panel{display:grid;gap:14px;overflow:visible;border:0;border-radius:0;background:transparent;box-shadow:none}
+.reservation-page[data-reservation-page="overview"] .reservation-item{position:relative;grid-template-columns:138px minmax(0,1fr) 180px;gap:20px;min-height:166px;padding:14px 17px 14px 14px;border:1px solid rgba(37,29,20,.09);border-radius:20px;background:#fff;box-shadow:0 12px 34px rgba(45,34,23,.065);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.reservation-page[data-reservation-page="overview"] .reservation-item:last-child{border-bottom:1px solid rgba(37,29,20,.09)}
+.reservation-page[data-reservation-page="overview"] .reservation-item:hover{border-color:rgba(255,160,18,.42);box-shadow:0 17px 42px rgba(45,34,23,.11);transform:translateY(-2px)}
+.reservation-page[data-reservation-page="overview"] .reservation-item__image{width:138px;height:138px;padding:10px;border-radius:15px;background:linear-gradient(145deg,#f8f5f0,#e9e2d9)}
+.reservation-page[data-reservation-page="overview"] .reservation-item__meta{color:#a15c00;font-size:.68rem}
+.reservation-page[data-reservation-page="overview"] .reservation-item h2{margin:5px 0 9px;font-size:1.28rem;line-height:1.05}
+.reservation-page[data-reservation-page="overview"] .reservation-item__components{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 14px;font-size:.74rem;line-height:1.35}
+.reservation-page[data-reservation-page="overview"] .reservation-item__components li{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.reservation-page[data-reservation-page="overview"] .reservation-item__note{font-size:.72rem;line-height:1.4}
+.reservation-page[data-reservation-page="overview"] .reservation-item__side{align-self:stretch;align-content:space-between;justify-items:stretch;min-width:0;padding:8px 0 5px 17px;border-left:1px solid rgba(0,0,0,.08)}
+.reservation-page[data-reservation-page="overview"] .reservation-item__price{color:#17191f;font-size:1.16rem;line-height:1.05;text-align:right}
+.reservation-page[data-reservation-page="overview"] .reservation-item__price small{margin-top:6px;font-size:.68rem;line-height:1.35}
+.reservation-item__controls{display:grid;justify-items:end;gap:8px}
+.reservation-page[data-reservation-page="overview"] .reservation-quantity{gap:4px;padding:4px;border:1px solid rgba(0,0,0,.1);border-radius:999px;background:#f4efe8}
+.reservation-page[data-reservation-page="overview"] .reservation-quantity button{width:31px;height:31px;border:0;background:#fff;font-size:1.05rem;box-shadow:0 2px 7px rgba(0,0,0,.06)}
+.reservation-page[data-reservation-page="overview"] .reservation-quantity button:last-child{background:#ffa012;box-shadow:none}
+.reservation-page[data-reservation-page="overview"] .reservation-quantity strong{min-width:28px;font-size:.84rem}
+.reservation-remove{border:0;background:transparent;color:#81776d;padding:1px 3px;font:750 .67rem/1.2 var(--font);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.reservation-remove:hover{color:#9f381f}
+
+.reservation-page[data-reservation-page="overview"] .reservation-total{top:108px;overflow:hidden;padding:27px;border:1px solid rgba(255,255,255,.1);border-radius:22px;background:linear-gradient(155deg,#191b21,#0e0f13);box-shadow:0 22px 55px rgba(24,20,15,.2)}
+.reservation-page[data-reservation-page="overview"] .reservation-total:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:#ffa012}
+.reservation-total__eyebrow{margin:0 0 5px;color:#ffa012;font-size:.67rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.reservation-page[data-reservation-page="overview"] .reservation-total h2{margin-bottom:25px;font-size:1.55rem;text-transform:uppercase}
+.reservation-page[data-reservation-page="overview"] .reservation-total__line{margin-top:12px;font-size:.82rem}
+.reservation-page[data-reservation-page="overview"] .reservation-total__main{align-items:end;margin-top:22px;padding-top:20px;font-size:.86rem}
+.reservation-page[data-reservation-page="overview"] .reservation-total__main strong{font-size:1.45rem;line-height:1;text-align:right}
+.reservation-page[data-reservation-page="overview"] .reservation-total .btn{min-height:52px;margin-top:25px;box-shadow:0 9px 25px rgba(255,160,18,.22)}
+.reservation-page[data-reservation-page="overview"] .reservation-back{margin-top:15px;font-size:.76rem;text-underline-offset:3px}
+.reservation-assurances{display:grid;gap:9px;margin:24px -27px -27px;padding:19px 27px 22px;border-top:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.025)}
+.reservation-assurances p{display:flex;align-items:center;gap:8px;margin:0;color:#aaa49b;font-size:.7rem;line-height:1.35}
+.reservation-assurances span{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:rgba(255,160,18,.14);color:#ffa012;font-size:.67rem;font-weight:950}
+
+@media(max-width:980px){
+  .reservation-page[data-reservation-page="overview"] .reservation-layout{grid-template-columns:1fr}
+  .reservation-page[data-reservation-page="overview"] .reservation-total{position:relative;top:auto}
+}
+@media(max-width:720px){
+  .reservation-page[data-reservation-page="overview"] .reservation-main{padding-top:36px;background:linear-gradient(180deg,#101217 0,#181a20 470px,#eee8df 470px)}
+  .reservation-page[data-reservation-page="overview"] .reservation-head{display:block}
+  .reservation-page[data-reservation-page="overview"] .reservation-head>p{margin-top:14px}
+  .reservation-page[data-reservation-page="overview"] .reservation-period{align-items:flex-start;margin-bottom:25px}
+  .reservation-page[data-reservation-page="overview"] .reservation-item{grid-template-columns:100px minmax(0,1fr);gap:14px;min-height:0;padding:12px}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__image{width:100px;height:100px}
+  .reservation-page[data-reservation-page="overview"] .reservation-item h2{font-size:1.05rem}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__components{display:none}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__side{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 0 0;border-top:1px solid rgba(0,0,0,.08);border-left:0}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__price{text-align:left}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__price small{text-align:left}
+  .reservation-item__controls{display:flex;align-items:center;gap:12px}
+}
+@media(max-width:430px){
+  .reservation-page[data-reservation-page="overview"] .reservation-head h1{font-size:2.25rem}
+  .reservation-page[data-reservation-page="overview"] .reservation-steps li{flex:0 0 auto}
+  .reservation-page[data-reservation-page="overview"] .reservation-item{grid-template-columns:82px minmax(0,1fr)}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__image{width:82px;height:82px}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__meta{font-size:.61rem}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__side{align-items:flex-start;gap:10px}
+  .reservation-item__controls{display:grid;justify-items:end;gap:7px}
+  .reservation-page[data-reservation-page="overview"] .reservation-total{padding:22px}
+  .reservation-assurances{margin:22px -22px -22px;padding:18px 22px 20px}
+}
+
+/* Reserveringsflow: banner, voortgang en categorieoverzicht */
+.reservation-page .reservation-steps li{border-color:rgba(255,255,255,.46);background:rgba(7,8,11,.6);color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.16)}
+.reservation-page .reservation-steps li.is-active{border-color:#ffa012;background:#ffa012;color:#17120b;box-shadow:0 5px 20px rgba(255,160,18,.23)}
+.reservation-page[data-reservation-page="overview"] .reservation-main{background:linear-gradient(180deg,rgba(8,10,14,.64) 0,rgba(12,14,19,.93) 405px,transparent 405px),url("assets/carnaval/banner2.png") center top/100% 405px no-repeat,#eee8df}
+.reservation-page[data-reservation-page="overview"] .reservation-main:before{display:none}
+.reservation-category-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:0 0 7px}
+.reservation-category-summary>div{display:flex;justify-content:space-between;gap:8px;padding:9px 10px;border:1px solid rgba(255,255,255,.09);border-radius:10px;background:rgba(255,255,255,.045);color:#bbb5ac;font-size:.72rem}
+.reservation-category-summary strong{color:#fff}
+.reservation-category-summary p{grid-column:1/-1;margin:0;color:#aaa49b;font-size:.76rem}
+
+.reservation-page[data-reservation-page="overview"] .reservation-item{cursor:pointer}
+.reservation-page[data-reservation-page="overview"] .reservation-item:focus-visible{outline:3px solid #ffa012;outline-offset:3px}
+.reservation-item__thumbs{display:flex;gap:6px;margin-top:11px;overflow-x:auto;padding:1px 1px 3px;scrollbar-width:thin;scrollbar-color:#d5c9ba transparent}
+.reservation-item__thumbs>span{position:relative;flex:0 0 auto;width:47px;height:42px;overflow:hidden;border:1px solid rgba(0,0,0,.09);border-radius:9px;background:#f3eee7}
+.reservation-item__thumbs img{width:100%;height:100%;padding:4px;object-fit:contain}
+.reservation-item__thumbs b{position:absolute;right:3px;bottom:3px;min-width:18px;padding:2px 4px;border-radius:5px;background:rgba(17,19,25,.9);color:#ffa012;font-size:.56rem;line-height:1.15;text-align:center}
+.reservation-product-dialog .dialog-footer .btn{white-space:nowrap}
+
+/* Volledig vernieuwde gegevenspagina */
+.reservation-page[data-reservation-page="form"]{background:#eee8df}
+.reservation-page[data-reservation-page="form"] .reservation-main{padding-top:50px;background:linear-gradient(180deg,rgba(8,10,14,.64) 0,rgba(12,14,19,.94) 430px,transparent 430px),url("assets/carnaval/banner2.png") center top/100% 430px no-repeat,#eee8df}
+.reservation-page[data-reservation-page="form"] .reservation-shell{width:min(1220px,100%)}
+.reservation-page[data-reservation-page="form"] .reservation-head{margin-bottom:24px}
+.reservation-page[data-reservation-page="form"] .reservation-head h1{max-width:760px;font-size:clamp(2.7rem,5vw,4.8rem)}
+.reservation-page[data-reservation-page="form"] .reservation-head>p{padding-bottom:5px;line-height:1.55}
+.reservation-page[data-reservation-page="form"] .reservation-period{width:max-content;max-width:100%;margin:0 0 34px;padding:12px 15px;border:1px solid rgba(255,160,18,.4);background:rgba(255,160,18,.11);color:#eee8df;font-size:.8rem;line-height:1.35}
+.reservation-page[data-reservation-page="form"] .reservation-form-layout{grid-template-columns:minmax(0,1fr) 355px;gap:26px}
+.reservation-page[data-reservation-page="form"] .reservation-form-card{display:grid;gap:15px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.reservation-form-section,.reservation-page[data-reservation-page="form"] .address-fields{margin:0;padding:24px;border:1px solid rgba(37,29,20,.09);border-radius:20px;background:#fff;box-shadow:0 12px 34px rgba(45,34,23,.065)}
+.reservation-form-section>header{display:flex;align-items:flex-start;gap:13px;margin-bottom:20px;padding-bottom:17px;border-bottom:1px solid rgba(0,0,0,.08)}
+.reservation-form-section>header>span,.reservation-page[data-reservation-page="form"] .address-fields legend>span{display:inline-grid;place-items:center;flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:#ffa012;color:#17120b;font-size:.7rem;font-weight:950;letter-spacing:0}
+.reservation-form-section h2{margin:1px 0 4px;font-size:1.18rem;letter-spacing:-.025em;text-transform:uppercase}
+.reservation-form-section header p{margin:0;color:#746c63;font-size:.78rem;line-height:1.45}
+.reservation-page[data-reservation-page="form"] .form-grid{gap:15px;margin-top:0}
+.reservation-page[data-reservation-page="form"] .request-form label{gap:6px;color:#48423c;font-size:.72rem;letter-spacing:.045em}
+.reservation-page[data-reservation-page="form"] .request-form input,.reservation-page[data-reservation-page="form"] .request-form textarea{border-color:rgba(0,0,0,.13);background:#f8f5f1;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}
+.reservation-page[data-reservation-page="form"] .request-form input{min-height:48px}
+.reservation-page[data-reservation-page="form"] .request-form input:focus,.reservation-page[data-reservation-page="form"] .request-form textarea:focus{outline:0;border-color:#ffa012;background:#fff;box-shadow:0 0 0 3px rgba(255,160,18,.14)}
+.reservation-page[data-reservation-page="form"] .address-fields{padding-top:20px}
+.reservation-page[data-reservation-page="form"] .address-fields legend{display:flex;align-items:center;gap:10px;margin-left:-3px;padding:0 8px 0 3px;background:#fff;font-size:.84rem}
+.reservation-page[data-reservation-page="form"] .address-unknown{margin:6px 0 18px;padding:10px 12px;border-radius:10px;background:#fff5e6}
+.reservation-page[data-reservation-page="form"] .address-help,.reservation-page[data-reservation-page="form"] .address-lookup{font-size:.75rem}
+.reservation-page[data-reservation-page="form"] .reservation-form-section--final{display:grid;gap:17px}
+.reservation-page[data-reservation-page="form"] .reservation-form-section--final>header{margin-bottom:0}
+.reservation-page[data-reservation-page="form"] .request-confirm{margin:0;padding:14px;border:1px solid rgba(255,160,18,.28);border-radius:12px;background:#fff7eb}
+.reservation-page[data-reservation-page="form"] .request-transport{margin:0;background:#f3eee7}
+.reservation-page[data-reservation-page="form"] .reservation-form-card>[data-reservation-submit]{min-height:54px;margin-top:2px;box-shadow:0 10px 26px rgba(255,160,18,.2)}
+.reservation-page[data-reservation-page="form"] .form-help{margin:0;text-align:center}
+.reservation-page[data-reservation-page="form"] .reservation-form-summary{top:108px}
+.reservation-page[data-reservation-page="form"] .reservation-form-summary .reservation-total{position:relative;top:auto;overflow:hidden;padding:27px;border:1px solid rgba(255,255,255,.1);border-radius:22px;background:linear-gradient(155deg,#191b21,#0e0f13);box-shadow:0 22px 55px rgba(24,20,15,.2)}
+.reservation-page[data-reservation-page="form"] .reservation-form-summary .reservation-total:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:#ffa012}
+.reservation-page[data-reservation-page="form"] .reservation-form-summary h2{margin-bottom:20px;font-size:1.45rem;text-transform:uppercase}
+.reservation-page[data-reservation-page="form"] .form-selection-list{gap:0}
+.reservation-page[data-reservation-page="form"] .form-selection-list li{padding:9px 0;font-size:.75rem;line-height:1.35}
+.reservation-page[data-reservation-page="form"] .reservation-total__main strong{text-align:right}
+
+@media(max-width:900px){
+  .reservation-page[data-reservation-page="form"] .reservation-form-layout{grid-template-columns:1fr}
+  .reservation-page[data-reservation-page="form"] .reservation-form-summary{position:static}
+}
+@media(max-width:720px){
+  .reservation-page[data-reservation-page="overview"] .reservation-main{background:linear-gradient(180deg,rgba(8,10,14,.66) 0,rgba(12,14,19,.95) 470px,transparent 470px),url("assets/carnaval/banner2.png") center top/auto 470px no-repeat,#eee8df}
+  .reservation-page[data-reservation-page="form"] .reservation-main{padding-top:36px;background:linear-gradient(180deg,rgba(8,10,14,.66) 0,rgba(12,14,19,.95) 500px,transparent 500px),url("assets/carnaval/banner2.png") center top/auto 500px no-repeat,#eee8df}
+  .reservation-page[data-reservation-page="form"] .reservation-head{display:block}
+  .reservation-page[data-reservation-page="form"] .reservation-head>p{margin-top:14px}
+  .reservation-page[data-reservation-page="form"] .reservation-period{align-items:flex-start;margin-bottom:25px}
+  .reservation-form-section,.reservation-page[data-reservation-page="form"] .address-fields{padding:19px 16px}
+  .reservation-page[data-reservation-page="form"] .address-grid{grid-template-columns:minmax(0,1fr) minmax(90px,.55fr)}
+  .reservation-page[data-reservation-page="form"] .address-grid .address-street,.reservation-page[data-reservation-page="form"] .address-grid .address-city{grid-column:1/-1}
+}
+@media(max-width:560px){
+  .reservation-page{max-width:100%;overflow-x:clip}
+  .reservation-page .nav-inner{width:100%;min-width:0;gap:8px;padding:12px}
+  .reservation-page .brand{flex:0 1 auto;min-width:0}
+  .reservation-page .brand img{width:auto;max-width:112px;height:32px}
+  .reservation-page .nav .btn{flex:0 0 auto;min-height:42px;padding:0 13px;font-size:.63rem;letter-spacing:.055em;white-space:nowrap}
+  .reservation-page .reservation-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;width:100%;overflow:visible}
+  .reservation-page .reservation-steps li{display:grid;place-items:center;min-width:0;padding:8px 5px;font-size:.56rem;line-height:1.25;text-align:center;white-space:normal}
+  .reservation-page .reservation-period{width:100%;max-width:none}
+  .reservation-page .reservation-period>span:last-child{min-width:0;overflow-wrap:anywhere}
+  .reservation-page .reservation-period strong{font-size:.72rem;line-height:1.3}
+  .reservation-item__thumbs>span{width:43px;height:39px}
+  .reservation-category-summary{grid-template-columns:1fr}
+  .reservation-page[data-reservation-page="form"] .reservation-head h1{font-size:2.25rem}
+  .reservation-page[data-reservation-page="form"] .form-grid{grid-template-columns:1fr}
+  .reservation-page[data-reservation-page="form"] .address-grid{grid-template-columns:1fr}
+  .reservation-page[data-reservation-page="form"] .address-grid .address-street,.reservation-page[data-reservation-page="form"] .address-grid .address-city,.reservation-page[data-reservation-page="form"] .address-grid label:last-child{grid-column:auto}
+}
+
+/* Banner2 is een staande foto: uitsnijden zonder de foto uit te rekken. */
+.reservation-page[data-reservation-page="overview"] .reservation-main,
+.reservation-page[data-reservation-page="form"] .reservation-main{position:relative;isolation:isolate;background:#eee8df}
+.reservation-page[data-reservation-page="overview"] .reservation-main:before,
+.reservation-page[data-reservation-page="form"] .reservation-main:before{content:"";display:block;position:absolute;z-index:-1;inset:0 0 auto;height:430px;background:linear-gradient(180deg,rgba(8,10,14,.64),rgba(12,14,19,.94)),url("assets/carnaval/banner2.png") center 58%/cover no-repeat;pointer-events:none}
+.reservation-page[data-reservation-page="overview"] .reservation-main:before{height:405px}
+.reservation-page .reservation-shell{position:relative;z-index:1}
+
+@media(max-width:720px){
+  .reservation-page[data-reservation-page="overview"] .reservation-main:before{height:470px;background-position:center 60%}
+  .reservation-page[data-reservation-page="form"] .reservation-main:before{height:500px;background-position:center 60%}
+}
+
+/* Grotere productbeelden in de winkelwagen. */
+.reservation-page[data-reservation-page="overview"] .reservation-item{grid-template-columns:240px minmax(0,1fr) 180px;min-height:268px}
+.reservation-page[data-reservation-page="overview"] .reservation-item__image{width:240px;height:240px;padding:14px}
+.reservation-item__thumbs{gap:9px;margin-top:17px}
+.reservation-item__thumbs>span{width:90px;height:80px;border-radius:12px}
+.reservation-item__thumbs img{padding:7px}
+.reservation-item__thumbs b{right:5px;bottom:5px;min-width:23px;padding:3px 5px;font-size:.68rem}
+
+@media(max-width:720px){
+  .reservation-page[data-reservation-page="overview"] .reservation-item{grid-template-columns:165px minmax(0,1fr);min-height:0}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__image{width:165px;height:165px}
+  .reservation-item__thumbs>span{width:78px;height:70px}
+}
+
+@media(max-width:430px){
+  .reservation-page[data-reservation-page="overview"] .reservation-item{grid-template-columns:145px minmax(0,1fr)}
+  .reservation-page[data-reservation-page="overview"] .reservation-item__image{width:145px;height:145px}
+  .reservation-item__thumbs>span{width:72px;height:64px}
+}
+
+/* Adreskoppen volledig binnen hun formulierkaart, gelijk aan de andere sectiekoppen. */
+.reservation-page[data-reservation-page="form"] .address-fields legend{float:left;width:100%;margin:0 0 20px;padding:0 0 17px;border-bottom:1px solid rgba(0,0,0,.08);background:transparent;font-size:1.08rem;line-height:1.2;letter-spacing:-.02em}
+.reservation-page[data-reservation-page="form"] .address-fields legend+*{clear:both}
