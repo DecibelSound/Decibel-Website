@@ -49,8 +49,8 @@
   }
 
   function syncNavigationLinks() {
-    document.querySelectorAll('[data-return-catalog]').forEach(link => { link.href = `carnaval.html?selectie=${selectionPayload()}#catalogus`; });
-    document.querySelectorAll('[data-return-overview]').forEach(link => { link.href = `reservering-overzicht.html#selectie=${selectionPayload()}`; });
+    document.querySelectorAll('[data-return-catalog]').forEach(link => { link.href = `/carnaval?selectie=${selectionPayload()}#catalogus`; });
+    document.querySelectorAll('[data-return-overview]').forEach(link => { link.href = `/reservering-overzicht#selectie=${selectionPayload()}`; });
   }
 
   function changeQuantity(id, change) {
@@ -131,7 +131,7 @@
     const total = totals();
     container.innerHTML = selected.length
       ? selected.map(overviewItem).join('')
-      : '<div class="reservation-empty"><h2>Jullie selectie is leeg</h2><p>Ga terug naar de catalogus om materiaal toe te voegen.</p><a class="btn" href="carnaval.html#catalogus">Bekijk de catalogus</a></div>';
+      : '<div class="reservation-empty"><h2>Jullie selectie is leeg</h2><p>Ga terug naar de catalogus om materiaal toe te voegen.</p><a class="btn" href="/carnaval#catalogus">Bekijk de catalogus</a></div>';
     renderCategorySummary(selected);
     document.querySelector('[data-reservation-total]').textContent = total.hasPriceOnRequest ? 'Prijs op aanvraag' : money.format(total.incl);
     document.querySelector('[data-reservation-total-ex]').textContent = total.hasPriceOnRequest ? 'Na controle berekend' : money.format(total.excl);
@@ -142,7 +142,7 @@
   function formSummaryHtml() {
     const selected = entries();
     const total = totals();
-    return `<div class="reservation-total"><h2>Jullie selectie</h2><ul class="form-selection-list">${selected.map(({product, quantity}) => `<li><span>${quantity}× ${escapeHtml(product.name)}</span><span>${product.priceOnRequest ? 'Op aanvraag' : money.format(product.price * quantity)}</span></li>`).join('')}</ul><div class="reservation-total__line reservation-total__main"><span>Totaal incl. btw</span><strong>${total.hasPriceOnRequest ? 'Prijs op aanvraag' : money.format(total.incl)}</strong></div><div class="reservation-total__line"><span>Excl. btw</span><span>${total.hasPriceOnRequest ? 'Na controle' : money.format(total.excl)}</span></div><a class="reservation-back" href="reservering-overzicht.html" data-return-overview>Selectie en aantallen aanpassen</a></div>`;
+    return `<div class="reservation-total"><h2>Jullie selectie</h2><ul class="form-selection-list">${selected.map(({product, quantity}) => `<li><span>${quantity}× ${escapeHtml(product.name)}</span><span>${product.priceOnRequest ? 'Op aanvraag' : money.format(product.price * quantity)}</span></li>`).join('')}</ul><div class="reservation-total__line reservation-total__main"><span>Totaal incl. btw</span><strong>${total.hasPriceOnRequest ? 'Prijs op aanvraag' : money.format(total.incl)}</strong></div><div class="reservation-total__line"><span>Excl. btw</span><span>${total.hasPriceOnRequest ? 'Na controle' : money.format(total.excl)}</span></div><a class="reservation-back" href="/reservering-overzicht" data-return-overview>Selectie en aantallen aanpassen</a></div>`;
   }
 
   function appendRequestDetails(formData) {
@@ -212,7 +212,7 @@
     const form = document.querySelector('[data-reservation-form]');
     const feedback = document.querySelector('[data-reservation-feedback]');
     const submit = document.querySelector('[data-reservation-submit]');
-    if (!entries().length) { window.location.replace('reservering-overzicht.html'); return; }
+    if (!entries().length) { window.location.replace('/reservering-overzicht'); return; }
     document.querySelector('[data-form-summary]').innerHTML = formSummaryHtml();
     syncNavigationLinks();
     const deliveryUnknown = form.querySelector('[data-delivery-unknown]');
@@ -244,7 +244,7 @@
           throw new Error(message);
         }
         localStorage.removeItem(storageKey); localStorage.removeItem(customStorageKey);
-        window.location.replace('carnaval.html?aanvraag=verzonden&selectie=leeg#catalogus');
+        window.location.replace('/carnaval?aanvraag=verzonden&selectie=leeg#catalogus');
       } catch (error) {
         feedback.textContent = error instanceof Error && error.message !== 'Failed to fetch' ? error.message : 'De aanvraag kon niet worden verstuurd. Controleer je internetverbinding of mail ons rechtstreeks.';
         feedback.hidden = false; submit.disabled = false; submit.textContent = 'Aanvraag versturen';
@@ -277,6 +277,6 @@
       if (event.target.closest('[data-reservation-product-close]')) productDialog.close();
       else if (event.target === productDialog) productDialog.close();
     });
-    document.querySelector('[data-continue-reservation]').addEventListener('click', () => { if (entries().length) window.location.assign(`reservering-formulier.html#selectie=${selectionPayload()}`); });
+    document.querySelector('[data-continue-reservation]').addEventListener('click', () => { if (entries().length) window.location.assign(`/reservering-formulier#selectie=${selectionPayload()}`); });
   } else if (page === 'form') initForm();
 })();

@@ -893,7 +893,7 @@ function syncStickyLayout() {
   function openRequest() {
     if (!cartEntries().length) return;
     const selection = encodeURIComponent(JSON.stringify({cart, customProducts}));
-    window.location.assign(`reservering-overzicht.html#selectie=${selection}`);
+    window.location.assign(`/reservering-overzicht#selectie=${selection}`);
   }
 
   function appendRequestDetails(formData) {

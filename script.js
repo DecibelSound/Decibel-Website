@@ -99,7 +99,7 @@ if(isHomePage&&!isCarnavalCatalog&&promoIsDue){
           <p class="carnaval-promo__eyebrow">Carnavalsverhuur 2027</p>
           <h2 id="carnaval-promo-title">Geluid en licht nodig voor jullie carnavals<wbr>wagen?</h2>
           <p>Bekijk de sets en stel jullie pakket samen.</p>
-          <div class="carnaval-promo__actions"><a class="btn" href="carnaval.html">Bekijk carnavalssets</a><button type="button" data-promo-close>Sluiten</button></div>
+          <div class="carnaval-promo__actions"><a class="btn" href="/carnaval">Bekijk carnavalssets</a><button type="button" data-promo-close>Sluiten</button></div>
         </div>
       </section>`;
     const closePromo=()=>{
